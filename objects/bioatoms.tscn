@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcog3ehgdwn1s"]
 
-[ext_resource type="Script" uid="uid://djagde1tx36f7" path="res://scenes/bioatoms/bioatoms.gd" id="1_wgg6h"]
+[ext_resource type="Script" uid="uid://djagde1tx36f7" path="res://objects/bioatoms/bioatoms.gd" id="1_wgg6h"]
 [ext_resource type="Texture2D" uid="uid://cao547mxwhiit" path="res://assets/FX/Particle/Bamboo.png" id="2_wgg6h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_grvey"]

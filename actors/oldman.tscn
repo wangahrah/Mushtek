@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://cxjihhnn21b13"]
 
-[ext_resource type="Script" uid="uid://be3nmedlxnrcj" path="res://characters/oldman.gd" id="1_w7ey8"]
-[ext_resource type="PackedScene" uid="uid://usnj35vyrhpp" path="res://scenes/fireball/fireball.tscn" id="2_nabfw"]
+[ext_resource type="Script" uid="uid://be3nmedlxnrcj" path="res://actors/oldman.gd" id="1_w7ey8"]
+[ext_resource type="PackedScene" uid="uid://usnj35vyrhpp" path="res://objects/fireball/fireball.tscn" id="2_nabfw"]
 [ext_resource type="Texture2D" uid="uid://cqsoxe04bxcf6" path="res://assets/Actor/Characters/SorcererOrange/SpriteSheet.png" id="2_wr5kl"]
 [ext_resource type="Texture2D" uid="uid://b5tyld7qmp0ks" path="res://assets/Items/Potion/Heart.png" id="4_nabfw"]
 [ext_resource type="Texture2D" uid="uid://dcqmt200kxgts" path="res://assets/Items/Resource/Grass.png" id="4_x83ic"]

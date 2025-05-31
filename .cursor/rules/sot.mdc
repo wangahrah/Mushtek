@@ -1,0 +1,33 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+this is a godot4 project for a fantasy game.
+
+for all prompts make sure the Godot Engine manual docs are in context, otherwise abort and prompt for them.
+
+the story:
+
+the setting is dystopian tech future + mycology - a fusion of plants and mushrooms.
+
+the player navigates the world fighting enemies and solving puzzles, increasing their ability to craft + access to crafting items. there are few 'world' or 'inventory' items - the player can 'craft' on the fly different items for different slots:
+
+hands
+head
+eyes
+body
+feet
+accessory
+ 
+different items in-slot of have different features - weapons have differnt characteristics, boots may run faster, allow walk on special terrain, eyes may allow darkvision or lazer attacks, etc.
+
+player collects from various sources natoms of four tiers, allowing increasingly complex crafting. recipes have to be invented by scanning blueprints.
+
+crafting the 'new' item is free, but there is a constant 'energy drain' of different natom tiers depending on complexity - ie simply headgear drains tier 1 natoms slowly and thats it, while the most complex may drain tier 4 natoms (and lower level)
+
+basically, advancing -> getting more+higher level natoms, crafting higher tier gear, allowing more efficient natom collection.
+
+ideally, the only 'inventory' we manage is natoms + tech unlocked.
+
+it's relatively open world, with an overmap + dungeons.

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cnm2sdwq2f7dx"]
 
-[ext_resource type="Script" uid="uid://b8y2rw2rrewjf" path="res://characters/creature/cyclat/cyclat.gd" id="1_ocegr"]
+[ext_resource type="Script" uid="uid://b8y2rw2rrewjf" path="res://actors/creature/cyclat/cyclat.gd" id="1_ocegr"]
 [ext_resource type="Texture2D" uid="uid://i7tuh1cmy17t" path="res://assets/Actor/Animals/CatCyclop/SpriteSheet.png" id="2_ocegr"]
 [ext_resource type="Texture2D" uid="uid://cutl1lxlrj5sd" path="res://assets/Ui/Dialog/DialogBoxFaceset.png" id="3_gd5ix"]
 [ext_resource type="Texture2D" uid="uid://cp14bficwbx03" path="res://assets/Actor/Animals/CatCyclop/Faceset.png" id="4_n28uc"]

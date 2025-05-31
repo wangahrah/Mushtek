@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneManager="*res://scenes/sceneManager/sceneManager.tscn"
-InventoryManager="*res://scenes/sceneManager/inventory_manager.gd"
+SceneManager="*res://managers/sceneManager.tscn"
+InventoryManager="*res://managers/inventory_manager.gd"
 
 [dotnet]
 

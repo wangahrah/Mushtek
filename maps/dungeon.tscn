@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bclo7843knepj" path="res://assets/Backgrounds/Tilesets/TilesetFloor.png" id="1_dnfnu"]
 [ext_resource type="Texture2D" uid="uid://ceethwmhu8f2s" path="res://assets/Backgrounds/Tilesets/TilesetNature.png" id="2_llb8c"]
 [ext_resource type="Texture2D" uid="uid://cr2vayn8h575i" path="res://assets/Backgrounds/Tilesets/TilesetReliefDetail.png" id="3_llb8c"]
-[ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://characters/oldman.tscn" id="3_pjnkd"]
-[ext_resource type="Script" uid="uid://d0afbe82j8d6g" path="res://scenes/sceneentrence/scene_entrance.gd" id="4_x2vmd"]
+[ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://actors/oldman.tscn" id="3_pjnkd"]
+[ext_resource type="Script" uid="uid://d0afbe82j8d6g" path="res://managers/scene_entrance.gd" id="4_x2vmd"]
 [ext_resource type="AudioStream" uid="uid://ifh8xu4rlubs" path="res://assets/Audio/Musics/2 - The Cave.ogg" id="6_pjnkd"]
-[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://characters/creature/cyclat/cyclat.tscn" id="7_x2vmd"]
+[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/creature/cyclat/cyclat.tscn" id="7_x2vmd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_dnfnu")

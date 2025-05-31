@@ -12,12 +12,12 @@ var player: Player
 func _ready() -> void:
 	# Initialize inventory manager
 	inventory_manager = Node.new()
-	inventory_manager.set_script(load("res://scenes/sceneManager/inventory_manager.gd"))
+	inventory_manager.set_script(load("res://managers/inventory_manager.gd"))
 	add_child(inventory_manager)
 	
 	# Initialize natom manager
 	natom_manager = Node.new()
-	natom_manager.set_script(load("res://scenes/natoms/natom_manager.gd"))
+	natom_manager.set_script(load("res://objects/natom_manager.gd"))
 	add_child(natom_manager)
 	
 	# Connect to inventory changes

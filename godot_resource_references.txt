@@ -1,0 +1,114 @@
+./.godot/global_script_class_cache.cfg:"path": "res://scenes/natoms/natom_resource.gd"
+./.godot/global_script_class_cache.cfg:"path": "res://characters/oldman.gd"
+./.godot/scene_groups_cache.cfg:[res://characters/creature/creature.tscn]
+./.godot/scene_groups_cache.cfg:[res://characters/creature/cyclat/cyclat.tscn]
+./.godot/scene_groups_cache.cfg:[res://scenes/enemy/enemy.tscn]
+./.godot/scene_groups_cache.cfg:[res://maps/level_1.tscn]
+./.godot/scene_groups_cache.cfg:[res://scenes/rock/rock.tscn]
+./.godot/scene_groups_cache.cfg:[res://scenes/treasurechest/treasure_chest.tscn]
+./.godot/scene_groups_cache.cfg:[res://scenes/natoms/natom_source.tscn]
+./.godot/editor/filesystem_cache10:::res://::1748728164
+./.godot/editor/filesystem_cache10:::res://characters/::1748726108
+./.godot/editor/filesystem_cache10:::res://characters/beast/::1748710149
+./.godot/editor/filesystem_cache10:::res://characters/creature/::1748724884
+./.godot/editor/filesystem_cache10:::res://characters/creature/cyclat/::1748710149
+./.godot/editor/filesystem_cache10:::res://maps/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/::1748719937
+./.godot/editor/filesystem_cache10:::res://scenes/bioatoms/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/enemy/::1748710149
+./.godot/editor/filesystem_cache10:::res://scenes/fireball/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/floorbutton/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/food/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/lockeddoor/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/natoms/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/rock/::1748726108
+./.godot/editor/filesystem_cache10:::res://scenes/sceneentrence/::1748547783
+./.godot/editor/filesystem_cache10:::res://scenes/sceneManager/::1748714084
+./.godot/editor/filesystem_cache10:sceneManager.tscn::PackedScene/PackedScene::1932840350216105534::1748710148::0::1::::<><><>0<>0<><>::uid://dl5vl78jdglgc::::res://scenes/sceneManager/scene_manager.gd
+./.godot/editor/filesystem_cache10:::res://scenes/treasurechest/::1748726108
+./.godot/editor/dungeon.tscn-folding-bda85952853655fe6e1ff5f5a5432628.cfg:resource_unfolds=["res://maps/dungeon.tscn::TileSet_5xbjy", PackedStringArray(), "res://maps/dungeon.tscn::RectangleShape2D_rus8k", PackedStringArray(), "res://maps/dungeon.tscn::TileSet_4nkto", PackedStringArray()]
+./.godot/editor/bioatoms.tscn-folding-992a8a9eddaf1ae7742f3bca6082abf2.cfg:resource_unfolds=["res://scenes/bioatoms/bioatoms.tscn::CircleShape2D_grvey", PackedStringArray("Resource"), "res://scenes/bioatoms/bioatoms.tscn::SpriteFrames_urqrf", PackedStringArray("Resource")]
+./.godot/editor/oldman.tscn-folding-03c108d4641c2faa469a9dc904070bbb.cfg:resource_unfolds=["res://characters/oldman.tscn::SpriteFrames_4igtx", PackedStringArray(), "res://characters/oldman.tscn::CapsuleShape2D_w7ey8", PackedStringArray(), "res://characters/oldman.tscn::Gradient_c5qek", PackedStringArray(), "res://characters/oldman.tscn::CircleShape2D_wr5kl", PackedStringArray(), "res://characters/oldman.tscn::RectangleShape2D_c5qek", PackedStringArray()]
+./.godot/editor/level_1.tscn-folding-6887eba858c6ae48b5ca13a7525fa2f9.cfg:resource_unfolds=["res://scenes/level_1.tscn::TileSet_5xbjy", PackedStringArray("terrain_set__array", "terrain_set_0/terrain__array"), "res://scenes/level_1.tscn::TileSet_4nkto", PackedStringArray("physics_layer__array"), "res://scenes/level_1.tscn::RectangleShape2D_rus8k", PackedStringArray()]
+./.godot/editor/enemy.tscn-folding-665b304debe985440237a95f3f724852.cfg:resource_unfolds=["res://scenes/enemy/enemy.tscn::SpriteFrames_25fiw", PackedStringArray(), "res://scenes/enemy/enemy.tscn::CircleShape2D_ocegr", PackedStringArray(), "res://scenes/enemy/enemy.tscn::CircleShape2D_2xqbj", PackedStringArray()]
+./.godot/editor/natom_source.tscn-folding-d5831ea00e8aa4b00ad73a3d483c8637.cfg:resource_unfolds=["res://scenes/natoms/natom_source.tscn::CircleShape2D_1", PackedStringArray("Resource")]
+./.godot/editor/food.tscn-folding-09630e124202219cd268bd0374a60540.cfg:resource_unfolds=["res://scenes/food/food.tscn::CircleShape2D_grvey", PackedStringArray("Resource"), "res://scenes/food/food.tscn::SpriteFrames_urqrf", PackedStringArray("Resource")]
+./.godot/editor/rigid_body_2d.tscn-folding-b1fc5f08f4ef15d5884913e2a368b848.cfg:resource_unfolds=["res://scenes/rigid_body_2d.tscn::RectangleShape2D_ocds8", PackedStringArray(), "res://scenes/rigid_body_2d.tscn::AtlasTexture_c1cnm", PackedStringArray()]
+./.godot/editor/script_editor_cache.cfg:[res://MySprite.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/sceneentrence/scene_entrance.gd]
+./.godot/editor/script_editor_cache.cfg:[res://characters/oldman.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/sceneManager/scene_manager.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/floorbutton/floorbutton.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/lockeddoor/lockeddoor.gd]
+./.godot/editor/script_editor_cache.cfg:[res://characters/creature/creature.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/treasurechest/treasure_chest.gd]
+./.godot/editor/script_editor_cache.cfg:[res://characters/creature/cyclat/cyclat.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/fireball/fireball.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/food/food.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/enemy/enemy.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/sceneManager/inventory_manager.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/bioatoms/bioatoms.gd]
+./.godot/editor/script_editor_cache.cfg:[res://scenes/natoms/natom_source.gd]
+./.godot/editor/rock.tscn-folding-f317384db3f823520ac0c34a654e0b3f.cfg:resource_unfolds=["res://scenes/rock/rock.tscn::RectangleShape2D_ocds8", PackedStringArray()]
+./.godot/editor/beast.tscn-folding-e0c09ccf2a1e9344a2788d6fcd54b9af.cfg:resource_unfolds=["res://characters/beast/beast.tscn::SpriteFrames_25njx", PackedStringArray()]
+./.godot/editor/creature.tscn-folding-ae55240c74e759a0977de9eeb7c3c168.cfg:resource_unfolds=["res://characters/creature/creature.tscn::SpriteFrames_25fiw", PackedStringArray(), "res://characters/creature/creature.tscn::CircleShape2D_2xqbj", PackedStringArray(), "res://characters/creature/creature.tscn::LabelSettings_rt66y", PackedStringArray("Font")]
+./.godot/editor/floorbutton.tscn-folding-bacbbf9682812bbffc0e08044f1c6eed.cfg:resource_unfolds=["res://scenes/floorbutton/floorbutton.tscn::SpriteFrames_p4c7v", PackedStringArray(), "res://scenes/floorbutton/floorbutton.tscn::RectangleShape2D_4s0ny", PackedStringArray()]
+./.godot/editor/oldman.tscn-folding-2351578af0f63798c95fe87f22aaae93.cfg:resource_unfolds=["res://scenes/oldman.tscn::SpriteFrames_4igtx", PackedStringArray(), "res://scenes/oldman.tscn::CapsuleShape2D_w7ey8", PackedStringArray()]
+./.godot/editor/editor_layout.cfg:dock_filesystem_selected_paths=PackedStringArray("res://scenes/fireball/fireball.tscn")
+./.godot/editor/editor_layout.cfg:open_scenes=PackedStringArray("res://maps/level_1.tscn", "res://characters/oldman.tscn", "res://maps/dungeon.tscn", "res://scenes/bioatoms/bioatoms.tscn", "res://scenes/food/food.tscn", "res://scenes/rock/rock.tscn", "res://scenes/lockeddoor/lockeddoor.tscn", "res://scenes/treasurechest/treasure_chest.tscn", "res://scenes/floorbutton/floorbutton.tscn", "res://scenes/natoms/natom_source.tscn", "res://scenes/fireball/fireball.tscn")
+./.godot/editor/editor_layout.cfg:current_scene="res://scenes/natoms/natom_source.tscn"
+./.godot/editor/editor_layout.cfg:open_scripts=["res://scenes/bioatoms/bioatoms.gd", "res://characters/creature/creature.gd", "res://characters/creature/cyclat/cyclat.gd", "res://scenes/enemy/enemy.gd", "res://scenes/fireball/fireball.gd", "res://scenes/floorbutton/floorbutton.gd", "res://scenes/food/food.gd", "res://scenes/sceneManager/inventory_manager.gd", "res://scenes/lockeddoor/lockeddoor.gd", "res://MySprite.gd", "res://scenes/natoms/natom_source.gd", "res://characters/oldman.gd", "res://scenes/sceneentrence/scene_entrance.gd", "res://scenes/sceneManager/scene_manager.gd", "res://scenes/treasurechest/treasure_chest.gd"]
+./.godot/editor/editor_layout.cfg:selected_script="res://characters/oldman.gd"
+./.godot/editor/fireball.tscn-folding-18368e3cd6be7b8e12a3ff806de487d5.cfg:resource_unfolds=["res://scenes/fireball/fireball.tscn::CircleShape2D_grvey", PackedStringArray(), "res://scenes/fireball/fireball.tscn::SpriteFrames_urqrf", PackedStringArray(), "res://scenes/fireball/fireball.tscn::Gradient_w2h4j", PackedStringArray()]
+./.godot/editor/level_1.tscn-folding-1dac46f031ecf126ccab9ccbdf096601.cfg:resource_unfolds=["res://maps/level_1.tscn::TileSet_5xbjy", PackedStringArray("terrain_set__array", "terrain_set_0/terrain__array"), "res://maps/level_1.tscn::TileSet_4nkto", PackedStringArray("physics_layer__array"), "res://maps/level_1.tscn::RectangleShape2D_rus8k", PackedStringArray(), "res://characters/creature/creature.tscn::SpriteFrames_25fiw", PackedStringArray(), "res://characters/creature/creature.tscn::CircleShape2D_2xqbj", PackedStringArray(), "res://characters/creature/creature.tscn::LabelSettings_rt66y", PackedStringArray("Font")]
+./.godot/editor/rock.tscn-folding-4d17f6ae760ddb66d5f85163ed872cf5.cfg:resource_unfolds=["res://scenes/rock.tscn::RectangleShape2D_ocds8", PackedStringArray(), "res://scenes/rock.tscn::AtlasTexture_c1cnm", PackedStringArray()]
+./.godot/editor/lockeddoor.tscn-folding-3c4bdf2cad2f3318220a0267bdbac4e1.cfg:resource_unfolds=["res://scenes/lockeddoor/lockeddoor.tscn::RectangleShape2D_e1wvl", PackedStringArray(), "res://scenes/lockeddoor/lockeddoor.tscn::SpriteFrames_tryrt", PackedStringArray("Resource")]
+./.godot/editor/treasure_chest.tscn-folding-c1fe78ef050f8a67a699e940b1441582.cfg:resource_unfolds=["res://scenes/treasurechest/treasure_chest.tscn::SpriteFrames_lj0u6", PackedStringArray(), "res://scenes/treasurechest/treasure_chest.tscn::RectangleShape2D_ohguc", PackedStringArray()]
+./.godot/editor/project_metadata.cfg:scenes=["res://scenes/fireball/fireball.tscn", "res://scenes/natoms/natom_source.tscn", "res://characters/oldman.tscn", "res://scenes/floorbutton/floorbutton.tscn", "res://scenes/treasurechest/treasure_chest.tscn", "res://scenes/lockeddoor/lockeddoor.tscn", "res://scenes/rock/rock.tscn", "res://scenes/food/food.tscn", "res://scenes/bioatoms/bioatoms.tscn", "res://scenes/enemy/cyclat.tscn"]
+./.godot/editor/project_metadata.cfg:scripts=["res://scenes/natoms/natom_source.gd", "res://scenes/bioatoms/bioatoms.gd", "res://scenes/sceneManager/inventory_manager.gd", "res://scenes/enemy/enemy.gd", "res://scenes/food/food.gd", "res://scenes/fireball/fireball.gd", "res://characters/creature/cyclat/cyclat.gd", "res://scenes/treasurechest/treasure_chest.gd", "res://characters/creature/creature.gd", "res://scenes/lockeddoor/lockeddoor.gd"]
+./.godot/editor/static_body_2d.tscn-folding-3e325cbc5bc3e38236a09d65e6c1c6a5.cfg:resource_unfolds=["res://characters/creature/static_body_2d.tscn::SpriteFrames_25fiw", PackedStringArray(), "res://characters/creature/static_body_2d.tscn::CircleShape2D_2xqbj", PackedStringArray()]
+./.godot/editor/filesystem_update4:res://maps/level_1.tscn
+./.godot/editor/filesystem_update4:res://characters/oldman.tscn
+./.godot/editor/filesystem_update4:res://maps/dungeon.tscn
+./.godot/editor/filesystem_update4:res://scenes/bioatoms/bioatoms.tscn
+./.godot/editor/filesystem_update4:res://scenes/food/food.tscn
+./.godot/editor/filesystem_update4:res://scenes/rock/rock.tscn
+./.godot/editor/filesystem_update4:res://scenes/lockeddoor/lockeddoor.tscn
+./.godot/editor/filesystem_update4:res://scenes/treasurechest/treasure_chest.tscn
+./.godot/editor/filesystem_update4:res://scenes/floorbutton/floorbutton.tscn
+./.godot/editor/filesystem_update4:res://scenes/natoms/natom_source.tscn
+./.godot/editor/filesystem_update4:res://scenes/fireball/fireball.tscn
+./.godot/editor/cyclat.tscn-folding-fa6db88a7cb313570c37b6c7215369bb.cfg:resource_unfolds=["res://characters/creature/cyclat/cyclat.tscn::SpriteFrames_25fiw", PackedStringArray(), "res://characters/creature/cyclat/cyclat.tscn::CircleShape2D_2xqbj", PackedStringArray(), "res://characters/creature/cyclat/cyclat.tscn::LabelSettings_rt66y", PackedStringArray(), "res://characters/creature/cyclat/cyclat.tscn::CircleShape2D_ocegr", PackedStringArray()]
+./project.godot:SceneManager="*res://scenes/sceneManager/sceneManager.tscn"
+./project.godot:InventoryManager="*res://scenes/sceneManager/inventory_manager.gd"
+./actors/creature/creature.gd:const BIOATOMS_SCENE = preload("res://objects/bioatoms/bioatoms.tscn")
+./actors/creature/creature.tscn:[ext_resource type="Script" uid="uid://ca2n4yhqon17d" path="res://actors/creature/creature.gd" id="1_nylc8"]
+./actors/creature/cyclat/cyclat.tscn:[ext_resource type="Script" uid="uid://b8y2rw2rrewjf" path="res://actors/creature/cyclat/cyclat.gd" id="1_ocegr"]
+./actors/enemy.tscn:[ext_resource type="Script" uid="uid://cfrtpyxk5gpr5" path="res://objects/enemy/enemy.gd" id="1_40wdo"]
+./actors/oldman.tscn:[ext_resource type="Script" uid="uid://be3nmedlxnrcj" path="res://actors/oldman.gd" id="1_w7ey8"]
+./actors/oldman.tscn:[ext_resource type="PackedScene" uid="uid://usnj35vyrhpp" path="res://objects/fireball/fireball.tscn" id="2_nabfw"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://actors/oldman.tscn" id="1_014kd"]
+./maps/level_1.tscn:[ext_resource type="Script" uid="uid://d0afbe82j8d6g" path="res://objects/sceneentrence/scene_entrance.gd" id="4_5xbjy"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://bdjpt63w488cm" path="res://objects/floorbutton/floorbutton.tscn" id="5_y0ld0"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://d1qgs3wo3ofmk" path="res://objects/rock/rock.tscn" id="6_egu6l"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://dd3a0s0a4h6fv" path="res://objects/lockeddoor/lockeddoor.tscn" id="9_8de6f"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://cy0qlvsi5jf06" path="res://actors/creature/creature.tscn" id="10_e0egg"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://4chh00evth8c" path="res://objects/treasurechest/treasure_chest.tscn" id="11_2m22u"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/creature/cyclat/cyclat.tscn" id="12_xuw2a"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://bcog3ehgdwn1s" path="res://objects/food/food.tscn" id="13_svqt2"]
+./maps/level_1.tscn:[ext_resource type="PackedScene" uid="uid://dj6ju71di64h7" path="res://objects/natoms/natom_source.tscn" id="14_a3ree"]
+./maps/level_1.tscn:next_scene = "res://maps/dungeon.tscn"
+./maps/dungeon.tscn:[ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://actors/oldman.tscn" id="3_pjnkd"]
+./maps/dungeon.tscn:[ext_resource type="Script" uid="uid://d0afbe82j8d6g" path="res://objects/sceneentrence/scene_entrance.gd" id="4_x2vmd"]
+./maps/dungeon.tscn:[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/creature/cyclat/cyclat.tscn" id="7_x2vmd"]
+./maps/dungeon.tscn:next_scene = "res://maps/level_1.tscn"
+./managers/sceneManager.tscn:[ext_resource type="Script" uid="uid://dl5vl78jdglgc" path="res://objects/sceneManager/scene_manager.gd" id="1_ece7x"]
+./managers/scene_manager.gd:	inventory_manager.set_script(load("res://objects/sceneManager/inventory_manager.gd"))
+./managers/scene_manager.gd:	natom_manager.set_script(load("res://objects/natoms/natom_manager.gd"))
+./objects/floorbutton.tscn:[ext_resource type="Script" uid="uid://5unetknjmaop" path="res://objects/floorbutton/floorbutton.gd" id="1_4s0ny"]
+./objects/treasure_chest.tscn:[ext_resource type="Script" uid="uid://b8ygobphye7xc" path="res://objects/treasurechest/treasure_chest.gd" id="1_14lt4"]
+./objects/fireball.tscn:[ext_resource type="Script" uid="uid://by5b73irfhp3b" path="res://objects/fireball/fireball.gd" id="1_grvey"]
+./objects/natom_source.tscn:[ext_resource type="Script" uid="uid://decfgj1wguxll" path="res://objects/natoms/natom_source.gd" id="1_2u4vw"]
+./objects/lockeddoor.tscn:[ext_resource type="Script" uid="uid://ddf7s32ws4ei8" path="res://objects/lockeddoor/lockeddoor.gd" id="1_e1wvl"]
+./objects/bioatoms.tscn:[ext_resource type="Script" uid="uid://djagde1tx36f7" path="res://objects/bioatoms/bioatoms.gd" id="1_wgg6h"]
+./objects/food.tscn:[ext_resource type="Script" uid="uid://cmdltb607k6t6" path="res://objects/food/food.gd" id="1_dkmuf"]

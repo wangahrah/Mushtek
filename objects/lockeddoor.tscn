@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dd3a0s0a4h6fv"]
 
-[ext_resource type="Script" uid="uid://ddf7s32ws4ei8" path="res://scenes/lockeddoor/lockeddoor.gd" id="1_e1wvl"]
+[ext_resource type="Script" uid="uid://ddf7s32ws4ei8" path="res://objects/lockeddoor/lockeddoor.gd" id="1_e1wvl"]
 [ext_resource type="Texture2D" uid="uid://cr2vayn8h575i" path="res://assets/Backgrounds/Tilesets/TilesetReliefDetail.png" id="1_wqkss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1wvl"]

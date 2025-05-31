@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcog3ehgdwn1s"]
 
-[ext_resource type="Script" uid="uid://cmdltb607k6t6" path="res://scenes/food/food.gd" id="1_dkmuf"]
+[ext_resource type="Script" uid="uid://cmdltb607k6t6" path="res://objects/food/food.gd" id="1_dkmuf"]
 [ext_resource type="Texture2D" uid="uid://c4ihsh1jqnn2r" path="res://assets/Items/Food/SeedBig3.png" id="2_4y3qy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_grvey"]

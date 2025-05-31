@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://cy0qlvsi5jf06"]
 
 [ext_resource type="Texture2D" uid="uid://bpjoukn7qolgp" path="res://assets/Actor/Monsters/ButterflyBlue/SpriteSheet.png" id="1_gsbft"]
-[ext_resource type="Script" uid="uid://ca2n4yhqon17d" path="res://characters/creature/creature.gd" id="1_nylc8"]
+[ext_resource type="Script" uid="uid://ca2n4yhqon17d" path="res://actors/creature/creature.gd" id="1_nylc8"]
 [ext_resource type="Texture2D" uid="uid://cutl1lxlrj5sd" path="res://assets/Ui/Dialog/DialogBoxFaceset.png" id="2_20apq"]
 [ext_resource type="Texture2D" uid="uid://cxgcdpfjic044" path="res://assets/Actor/Monsters/ButterflyBlue/Faceset.png" id="4_whhk4"]
 

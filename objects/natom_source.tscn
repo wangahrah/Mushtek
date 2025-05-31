@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dj6ju71di64h7"]
 
-[ext_resource type="Script" uid="uid://decfgj1wguxll" path="res://scenes/natoms/natom_source.gd" id="1_2u4vw"]
+[ext_resource type="Script" uid="uid://decfgj1wguxll" path="res://objects/natoms/natom_source.gd" id="1_2u4vw"]
 [ext_resource type="Texture2D" uid="uid://dlhlm5y6gws5k" path="res://assets/Items/Object/Dice 20.png" id="2_lpbl3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]

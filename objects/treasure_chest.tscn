@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://4chh00evth8c"]
 
-[ext_resource type="Script" uid="uid://b8ygobphye7xc" path="res://scenes/treasurechest/treasure_chest.gd" id="1_14lt4"]
+[ext_resource type="Script" uid="uid://b8ygobphye7xc" path="res://objects/treasurechest/treasure_chest.gd" id="1_14lt4"]
 [ext_resource type="Texture2D" uid="uid://cxsrm07v13he2" path="res://assets/Items/Treasure/BigTreasureChest.png" id="1_ohguc"]
 [ext_resource type="AudioStream" uid="uid://d38avgu7d4v1g" path="res://assets/Audio/Sounds/Bonus/Bonus2.wav" id="3_khn8r"]
 

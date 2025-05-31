@@ -11,7 +11,6 @@ var hit_timer: float = 0.0
 const HIT_DURATION: float = 0.2  # How long the hit effect lasts
 
 # Bioatoms drop variables
-const BIOATOMS_SCENE = preload("res://scenes/bioatoms/bioatoms.tscn")
 const MIN_BIOATOMS: int = 3
 const MAX_BIOATOMS: int = 6
 

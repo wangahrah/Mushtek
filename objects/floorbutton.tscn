@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdjpt63w488cm"]
 
-[ext_resource type="Script" uid="uid://5unetknjmaop" path="res://scenes/floorbutton/floorbutton.gd" id="1_4s0ny"]
+[ext_resource type="Script" uid="uid://5unetknjmaop" path="res://objects/floorbutton/floorbutton.gd" id="1_4s0ny"]
 [ext_resource type="Texture2D" uid="uid://8h7jxtdhkbfa" path="res://assets/Backgrounds/Tilesets/TilesetDungeon.png" id="1_37obg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xdyte"]
