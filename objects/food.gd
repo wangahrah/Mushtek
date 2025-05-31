@@ -12,7 +12,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the body is a player
 	if body is Player:
-		body.heal(health)
+		SceneManager.health_manager.heal(health)
 	
 	# Destroy the fireball after hitting something
 	queue_free()

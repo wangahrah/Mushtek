@@ -818,6 +818,12 @@ tile_set = SubResource("TileSet_4nkto")
 [node name="Player" parent="ObstacleLayer" instance=ExtResource("3_pjnkd")]
 position = Vector2(8, 48)
 motion_mode = 1
+move_speed = null
+acceleration = null
+friction = null
+air_resistance = null
+fireball_natom_cost = null
+cast_cooldown = null
 
 [node name="Camera2D" type="Camera2D" parent="ObstacleLayer/Player"]
 position = Vector2(-6, 3)

@@ -1,10 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://cxjihhnn21b13"]
+[gd_scene load_steps=32 format=3 uid="uid://cxjihhnn21b13"]
 
 [ext_resource type="Script" uid="uid://be3nmedlxnrcj" path="res://actors/oldman.gd" id="1_w7ey8"]
-[ext_resource type="PackedScene" uid="uid://usnj35vyrhpp" path="res://objects/fireball/fireball.tscn" id="2_nabfw"]
+[ext_resource type="PackedScene" uid="uid://usnj35vyrhpp" path="res://objects/fireball.tscn" id="2_nabfw"]
 [ext_resource type="Texture2D" uid="uid://cqsoxe04bxcf6" path="res://assets/Actor/Characters/SorcererOrange/SpriteSheet.png" id="2_wr5kl"]
-[ext_resource type="Texture2D" uid="uid://b5tyld7qmp0ks" path="res://assets/Items/Potion/Heart.png" id="4_nabfw"]
-[ext_resource type="Texture2D" uid="uid://dcqmt200kxgts" path="res://assets/Items/Resource/Grass.png" id="4_x83ic"]
+[ext_resource type="PackedScene" path="res://objects/spells/spell_manager.tscn" id="3_spell_manager"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nabfw"]
 atlas = ExtResource("2_wr5kl")
@@ -234,6 +233,8 @@ script = ExtResource("1_w7ey8")
 fireball_scene = ExtResource("2_nabfw")
 fireball_spawn_distance = 5.0
 
+[node name="SpellManager" parent="." instance=ExtResource("3_spell_manager")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_4igtx")
@@ -283,54 +284,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea"]
 shape = SubResource("CircleShape2D_wr5kl")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="bioatoms" type="Panel" parent="CanvasLayer"]
-offset_left = 129.0
-offset_top = 23.0
-offset_right = 169.0
-offset_bottom = 63.0
-scale = Vector2(0.997475, 0.997475)
-
-[node name="Label" type="Label" parent="CanvasLayer/bioatoms"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 45.0
-offset_right = 46.0
-offset_bottom = 120.0
-scale = Vector2(0.95522, 1.00421)
-text = "Bio"
-
-[node name="gourd" type="TextureRect" parent="CanvasLayer/bioatoms"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(1.00488, 0.931002)
-texture = ExtResource("4_x83ic")
-
-[node name="health" type="Panel" parent="CanvasLayer"]
-offset_left = 45.0
-offset_top = 22.0
-offset_right = 85.0
-offset_bottom = 62.0
-scale = Vector2(0.997475, 0.997475)
-
-[node name="Label" type="Label" parent="CanvasLayer/health"]
-layout_mode = 0
-offset_left = 10.0253
-offset_top = 42.1063
-offset_right = 54.0253
-offset_bottom = 117.106
-scale = Vector2(0.95522, 1.01087)
-text = "10"
-
-[node name="gourd" type="TextureRect" parent="CanvasLayer/health"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(1.00488, 0.931002)
-texture = ExtResource("4_nabfw")
 
 [connection signal="body_entered" from="InteractArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="." method="_on_area_2d_body_exited"]

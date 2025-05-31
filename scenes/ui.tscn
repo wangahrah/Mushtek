@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqnvx8y4y5g3p"]
+
+[ext_resource type="Script" uid="uid://bd8qn01rbq8gw" path="res://managers/ui_manager.gd" id="1_ui_manager"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ui_manager")
+
+[node name="health" type="Panel" parent="."]
+offset_left = 45.0
+offset_top = 22.0
+offset_right = 85.0
+offset_bottom = 62.0
+scale = Vector2(0.997475, 0.997475)
+
+[node name="Label" type="Label" parent="health"]
+layout_mode = 0
+offset_left = 10.0253
+offset_top = 42.1063
+offset_right = 54.0253
+offset_bottom = 117.106
+scale = Vector2(0.95522, 1.01087)
+text = "10"
+
+[node name="gourd" type="TextureRect" parent="health"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00488, 0.931002)
+
+[node name="bioatoms" type="Panel" parent="."]
+offset_left = 129.0
+offset_top = 23.0
+offset_right = 169.0
+offset_bottom = 63.0
+scale = Vector2(0.997475, 0.997475)
+
+[node name="Label" type="Label" parent="bioatoms"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 45.0
+offset_right = 46.0
+offset_bottom = 120.0
+scale = Vector2(0.95522, 1.00421)
+text = "Bio"
+
+[node name="gourd" type="TextureRect" parent="bioatoms"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00488, 0.931002)
+
+[node name="energy_tier_1" type="Panel" parent="."]
+offset_left = 213.0
+offset_top = 23.0
+offset_right = 253.0
+offset_bottom = 63.0
+scale = Vector2(0.997475, 0.997475)
+
+[node name="Label" type="Label" parent="energy_tier_1"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 45.0
+offset_right = 46.0
+offset_bottom = 120.0
+scale = Vector2(0.95522, 1.00421)
+text = "0"
+
+[node name="gourd" type="TextureRect" parent="energy_tier_1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00488, 0.931002)
+
+[node name="energy_tier_2" type="Panel" parent="."]
+offset_left = 297.0
+offset_top = 23.0
+offset_right = 337.0
+offset_bottom = 63.0
+scale = Vector2(0.997475, 0.997475)
+
+[node name="Label" type="Label" parent="energy_tier_2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 45.0
+offset_right = 46.0
+offset_bottom = 120.0
+scale = Vector2(0.95522, 1.00421)
+text = "0"
+
+[node name="gourd" type="TextureRect" parent="energy_tier_2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00488, 0.931002)
+
+[node name="energy_tier_3" type="Panel" parent="."]
+offset_left = 381.0
+offset_top = 23.0
+offset_right = 421.0
+offset_bottom = 63.0
+scale = Vector2(0.997475, 0.997475)
+
+[node name="Label" type="Label" parent="energy_tier_3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 45.0
+offset_right = 46.0
+offset_bottom = 120.0
+scale = Vector2(0.95522, 1.00421)
+text = "0"
+
+[node name="gourd" type="TextureRect" parent="energy_tier_3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00488, 0.931002)

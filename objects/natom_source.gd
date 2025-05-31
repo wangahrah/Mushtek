@@ -104,7 +104,23 @@ func _collect_natoms() -> void:
 		var amount = min(int(collection_rate), current_natoms)
 		current_natoms -= amount
 		print("DEBUG: Collected ", amount, " natoms. Remaining: ", current_natoms, "/", max_natoms)
-		SceneManager.add_natoms(natom_tier, amount)
+		
+		# Distribute natoms across all tiers up to current tier
+		match natom_tier:
+			NatomResource.Tier.TIER_4:
+				SceneManager.add_natoms(NatomResource.Tier.TIER_4, amount)
+				SceneManager.add_natoms(NatomResource.Tier.TIER_3, amount)
+				SceneManager.add_natoms(NatomResource.Tier.TIER_2, amount)
+				SceneManager.add_natoms(NatomResource.Tier.TIER_1, amount)
+			NatomResource.Tier.TIER_3:
+				SceneManager.add_natoms(NatomResource.Tier.TIER_3, amount)
+				SceneManager.add_natoms(NatomResource.Tier.TIER_2, amount)
+				SceneManager.add_natoms(NatomResource.Tier.TIER_1, amount)
+			NatomResource.Tier.TIER_2:
+				SceneManager.add_natoms(NatomResource.Tier.TIER_2, amount)
+				SceneManager.add_natoms(NatomResource.Tier.TIER_1, amount)
+			NatomResource.Tier.TIER_1:
+				SceneManager.add_natoms(NatomResource.Tier.TIER_1, amount)
 		
 		# Emit particles
 		particles.emitting = true

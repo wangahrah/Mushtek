@@ -22,8 +22,11 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
+	# Check if the body is a player
+	if body is Player:
+		SceneManager.health_manager.take_damage(damage)
 	# Check if the body is an enemy
-	if body.has_method("take_damage"):
+	elif body.has_method("take_damage"):
 		body.take_damage(damage)
 	
 	# Destroy the fireball after hitting something
