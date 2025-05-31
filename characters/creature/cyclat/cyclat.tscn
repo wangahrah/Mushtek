@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://cnm2sdwq2f7dx"]
+
+[ext_resource type="Script" uid="uid://b8y2rw2rrewjf" path="res://characters/creature/cyclat/cyclat.gd" id="1_ocegr"]
+[ext_resource type="Texture2D" uid="uid://i7tuh1cmy17t" path="res://assets/Actor/Animals/CatCyclop/SpriteSheet.png" id="2_ocegr"]
+[ext_resource type="Texture2D" uid="uid://cutl1lxlrj5sd" path="res://assets/Ui/Dialog/DialogBoxFaceset.png" id="3_gd5ix"]
+[ext_resource type="Texture2D" uid="uid://cp14bficwbx03" path="res://assets/Actor/Animals/CatCyclop/Faceset.png" id="4_n28uc"]
+[ext_resource type="AudioStream" uid="uid://c8vxovd5ixrax" path="res://assets/Audio/Sounds/Creature/Duck.wav" id="5_gd5ix"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocegr"]
+atlas = ExtResource("2_ocegr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45pyq"]
+atlas = ExtResource("2_ocegr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcpsu"]
+atlas = ExtResource("2_ocegr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_25fiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocegr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45pyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcpsu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2xqbj"]
+radius = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rt66y"]
+font_size = 48
+font_color = Color(1, 0.156863, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ocegr"]
+radius = 150.12
+
+[node name="cyclat" type="CharacterBody2D" groups=["interactable"]]
+collision_layer = 5
+collision_mask = 4
+script = ExtResource("1_ocegr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_25fiw")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_2xqbj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 411.0
+offset_right = 319.0
+offset_bottom = 469.0
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("3_gd5ix")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect"]
+layout_mode = 0
+offset_left = 4.86486
+offset_top = 13.2432
+offset_right = 44.8649
+offset_bottom = 53.2432
+texture = ExtResource("4_n28uc")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 215.0
+offset_top = 472.0
+offset_right = 486.0
+offset_bottom = 539.0
+text = "Help me Engineer Man!"
+label_settings = SubResource("LabelSettings_rt66y")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gd5ix")
+
+[node name="PlayerDetectArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea2D"]
+shape = SubResource("CircleShape2D_ocegr")
+
+[connection signal="body_entered" from="PlayerDetectArea2D" to="." method="_on_player_detect_area_2d_body_entered"]
+[connection signal="body_exited" from="PlayerDetectArea2D" to="." method="_on_player_detect_area_2d_body_exited"]

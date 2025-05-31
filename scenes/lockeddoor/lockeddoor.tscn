@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd3a0s0a4h6fv"]
+
+[ext_resource type="Script" uid="uid://ddf7s32ws4ei8" path="res://scenes/lockeddoor/lockeddoor.gd" id="1_e1wvl"]
+[ext_resource type="Texture2D" uid="uid://cr2vayn8h575i" path="res://assets/Backgrounds/Tilesets/TilesetReliefDetail.png" id="1_wqkss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1wvl"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmr7b"]
+atlas = ExtResource("1_wqkss")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7e2n"]
+atlas = ExtResource("1_wqkss")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tryrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmr7b")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7e2n")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="lockeddoor" type="RigidBody2D"]
+collision_layer = 7
+collision_mask = 7
+gravity_scale = 0.0
+script = ExtResource("1_e1wvl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_e1wvl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_tryrt")
+animation = &"closed"
+autoplay = "closed"
+frame_progress = 0.821935

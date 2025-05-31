@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://dj6ju71di64h7"]
+
+[ext_resource type="Script" uid="uid://decfgj1wguxll" path="res://scenes/natoms/natom_source.gd" id="1_2u4vw"]
+[ext_resource type="Texture2D" uid="uid://dlhlm5y6gws5k" path="res://assets/Items/Object/Dice 20.png" id="2_lpbl3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[sub_resource type="Animation" id="Animation_1"]
+resource_name = "collect"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_2"]
+resource_name = "deplete"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.5, 0.5, 0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_3"]
+resource_name = "respawn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.5, 0.5, 0.5, 0.5), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1"]
+_data = {
+&"collect": SubResource("Animation_1"),
+&"deplete": SubResource("Animation_2"),
+&"respawn": SubResource("Animation_3")
+}
+
+[node name="NatomSource" type="Node2D" groups=["natom_source"]]
+script = ExtResource("1_2u4vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.531113, 0.531113)
+texture = ExtResource("2_lpbl3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1")
+}
+
+[node name="Particles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.5
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.5, 0.8, 1, 0.5)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

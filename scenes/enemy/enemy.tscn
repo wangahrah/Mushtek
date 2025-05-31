@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://c36c5u40cqwpf"]
+
+[ext_resource type="Script" uid="uid://cfrtpyxk5gpr5" path="res://scenes/enemy/enemy.gd" id="1_40wdo"]
+[ext_resource type="Texture2D" uid="uid://bbfdvk01xi7pk" path="res://assets/Actor/Monsters/DragonYellow/SpriteSheet.png" id="2_tjssy"]
+[ext_resource type="AudioStream" uid="uid://c8vxovd5ixrax" path="res://assets/Audio/Sounds/Creature/Duck.wav" id="3_gl05p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwlon"]
+atlas = ExtResource("2_tjssy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbhyu"]
+atlas = ExtResource("2_tjssy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13gj6"]
+atlas = ExtResource("2_tjssy")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4efjx"]
+atlas = ExtResource("2_tjssy")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvxgb"]
+atlas = ExtResource("2_tjssy")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_25fiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwlon")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbhyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13gj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4efjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvxgb")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ocegr"]
+radius = 150.12
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2xqbj"]
+radius = 7.07107
+
+[node name="enemy" type="CharacterBody2D" groups=["interactable"]]
+collision_layer = 5
+collision_mask = 4
+script = ExtResource("1_40wdo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_25fiw")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.221918
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gl05p")
+
+[node name="PlayerDetectArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea2D"]
+shape = SubResource("CircleShape2D_ocegr")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_2xqbj")
+debug_color = Color(0.931716, 0.186877, 0.464807, 0.42)
+
+[connection signal="body_entered" from="PlayerDetectArea2D" to="." method="_on_player_detect_area_2d_body_entered"]
+[connection signal="body_exited" from="PlayerDetectArea2D" to="." method="_on_player_detect_area_2d_body_exited"]
