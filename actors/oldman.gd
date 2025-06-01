@@ -1,6 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
+# Import spell classes
+const FireballSpell = preload("res://objects/spells/fireball_spell.gd")
+const LightningSpell = preload("res://objects/spells/lightning_spell.gd")
+const FungalPushSpell = preload("res://objects/spells/fungal_push_spell.gd")
+
 # Signals
 signal player_died
 
@@ -61,16 +66,26 @@ func _initialize_game_state() -> void:
 func _validate_collection_area() -> void:
 	if not collection_area:
 		push_error("CollectionArea node not found in player scene!")
-	else:
-		print("DEBUG: Collection area found with:")
-		print("  - Layer: ", collection_area.collision_layer)
-		print("  - Mask: ", collection_area.collision_mask)
 
 func _initialize_spells() -> void:
+	print("DEBUG: Initializing spells")
 	# Create and add fireball spell
 	var fireball_spell = FireballSpell.new()
 	fireball_spell.fireball_scene = preload("res://objects/fireball.tscn")
 	spell_manager.add_spell(fireball_spell)
+	print("DEBUG: Added fireball spell")
+	
+	# Create and add lightning spell
+	var lightning_spell = LightningSpell.new()
+	lightning_spell.lightning_scene = preload("res://objects/lightning_bolt.tscn")
+	spell_manager.add_spell(lightning_spell)
+	print("DEBUG: Added lightning spell")
+	
+	# Create and add fungal push spell
+	var fungal_push_spell = FungalPushSpell.new()
+	fungal_push_spell.fungal_push_scene = preload("res://objects/fungal_push.tscn")
+	spell_manager.add_spell(fungal_push_spell)
+	print("DEBUG: Added fungal push spell")
 
 # Input handling methods
 func _handle_input() -> void:
@@ -213,31 +228,19 @@ func _throw_object() -> void:
 # Natom collection methods
 func _try_collect_natoms() -> void:
 	if not collection_area:
-		print("DEBUG: Collection area is null!")
 		return
 		
 	var overlapping_bodies = collection_area.get_overlapping_bodies()
-	print("DEBUG: Found ", overlapping_bodies.size(), " overlapping bodies in collection area")
-	print("DEBUG: Collection area position: ", collection_area.global_position)
-	print("DEBUG: Collection area collision layer: ", collection_area.collision_layer)
-	print("DEBUG: Collection area collision mask: ", collection_area.collision_mask)
 	
 	for body in overlapping_bodies:
-		print("DEBUG: Checking body: ", body.name)
-		print("DEBUG: Body collision layer: ", body.collision_layer if body.has_method("get_collision_layer") else "N/A")
-		
 		if body == self:
-			print("DEBUG: Skipping player body")
 			continue
 			
 		if body.is_in_group("natom_source"):
-			print("DEBUG: Found natom source, starting collection")
 			collection_target = body
 			is_collecting = true
 			body.start_collection(self)
 			break
-		else:
-			print("DEBUG: Found body but not a natom source: ", body.name)
 
 # Signal handlers
 func _on_area_2d_body_entered(body: Node2D) -> void:

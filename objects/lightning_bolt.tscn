@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://dx6l8xxloxeqw"]
+
+[ext_resource type="Script" uid="uid://dbe5o7hye0e7d" path="res://objects/lightning_bolt.gd" id="1_lightning"]
+[ext_resource type="Texture2D" uid="uid://c3cr06mbvixix" path="res://assets/FX/Projectile/EnergyBall.png" id="2_4rlne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lightning"]
+size = Vector2(20, 4)
+
+[sub_resource type="Gradient" id="Gradient_lightning"]
+colors = PackedColorArray(0.2, 0.8, 1, 1, 0.4, 0.9, 1, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etu6b"]
+atlas = ExtResource("2_4rlne")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogrcj"]
+atlas = ExtResource("2_4rlne")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw0wl"]
+atlas = ExtResource("2_4rlne")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s30yv"]
+atlas = ExtResource("2_4rlne")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2iy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etu6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogrcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw0wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s30yv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LightningBolt" type="Area2D"]
+script = ExtResource("1_lightning")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lightning")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+lifetime = 0.2
+explosiveness = 0.1
+randomness = 0.2
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.2, 0.8, 1, 1)
+color_ramp = SubResource("Gradient_lightning")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x2iy6")
+autoplay = "default"

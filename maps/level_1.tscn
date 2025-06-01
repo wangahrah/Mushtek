@@ -1186,12 +1186,6 @@ natom_tier = 3
 position = Vector2(91, -55)
 scale = Vector2(1, 1.01593)
 motion_mode = 1
-move_speed = null
-acceleration = null
-friction = null
-air_resistance = null
-fireball_natom_cost = null
-cast_cooldown = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, 3)

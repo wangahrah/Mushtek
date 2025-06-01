@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqnvx8y4y5g3p"]
+[gd_scene load_steps=7 format=3 uid="uid://bqnvx8y4y5g3p"]
 
 [ext_resource type="Script" uid="uid://bd8qn01rbq8gw" path="res://managers/ui_manager.gd" id="1_ui_manager"]
+[ext_resource type="Texture2D" uid="uid://b5tyld7qmp0ks" path="res://assets/Items/Potion/Heart.png" id="2_8dubc"]
+[ext_resource type="Texture2D" uid="uid://vq2s4j2ikbru" path="res://assets/Items/Object/Dice 4.png" id="3_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://cns10n4fbrggq" path="res://assets/Items/Object/Dice 6.png" id="4_ktti3"]
+[ext_resource type="Texture2D" uid="uid://dafo71ypfqjjj" path="res://assets/Items/Object/Dice 8.png" id="5_cgfq5"]
+[ext_resource type="Texture2D" uid="uid://dlhlm5y6gws5k" path="res://assets/Items/Object/Dice 20.png" id="6_7dvkv"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_ui_manager")
@@ -26,6 +31,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.00488, 0.931002)
+texture = ExtResource("2_8dubc")
 
 [node name="bioatoms" type="Panel" parent="."]
 offset_left = 129.0
@@ -48,6 +54,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.00488, 0.931002)
+texture = ExtResource("3_p7vwb")
 
 [node name="energy_tier_1" type="Panel" parent="."]
 offset_left = 213.0
@@ -70,6 +77,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.00488, 0.931002)
+texture = ExtResource("4_ktti3")
 
 [node name="energy_tier_2" type="Panel" parent="."]
 offset_left = 297.0
@@ -92,6 +100,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.00488, 0.931002)
+texture = ExtResource("5_cgfq5")
 
 [node name="energy_tier_3" type="Panel" parent="."]
 offset_left = 381.0
@@ -114,3 +123,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.00488, 0.931002)
+texture = ExtResource("6_7dvkv")

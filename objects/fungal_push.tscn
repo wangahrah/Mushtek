@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8q6y2vx4n5m3"]
+
+[ext_resource type="Script" path="res://objects/fungal_push.gd" id="1_fungal"]
+[ext_resource type="Texture2D" uid="uid://cssh4cm0sof4o" path="res://assets/FX/Projectile/PlantSpike.png" id="2_lrang"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fungal"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkw1t"]
+atlas = ExtResource("2_lrang")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bigfl"]
+atlas = ExtResource("2_lrang")
+region = Rect2(24, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8u6c"]
+atlas = ExtResource("2_lrang")
+region = Rect2(48, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsxnu"]
+atlas = ExtResource("2_lrang")
+region = Rect2(72, 0, 24, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urqrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkw1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bigfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8u6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsxnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_fungal"]
+colors = PackedColorArray(0.2, 0.8, 0.2, 1, 0, 0.4, 0, 1)
+
+[node name="FungalPush" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_fungal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fungal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_urqrf")
+autoplay = "default"
+frame_progress = 0.647585
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 16
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 20)
+color = Color(0.2, 0.8, 0.2, 1)
+color_ramp = SubResource("Gradient_fungal")
+hue_variation_min = -0.27
+hue_variation_max = 0.95
