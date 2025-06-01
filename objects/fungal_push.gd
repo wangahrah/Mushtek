@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 100.0  # Slightly slower for better spread visibility
+@export var speed: float = 50.0  # Slightly slower for better spread visibility
 @export var damage: int = 10  # Same damage as fireball
 @export var knockback_force: float = 300.0  # Force to push enemies back
 @export var lifetime: float = 0.5  # Shorter lifetime for better spread visibility

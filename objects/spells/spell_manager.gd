@@ -43,7 +43,6 @@ func _handle_spell_selection() -> void:
 
 func _handle_spell_casting() -> void:
 	if current_spell and Input.is_action_just_pressed("cast_spell"):
-		print("DEBUG: Attempting to cast spell: ", current_spell.spell_name)
 		if current_spell.can_cast():
 			var parent = get_parent()
 			if parent is Node2D:
@@ -51,9 +50,6 @@ func _handle_spell_casting() -> void:
 				current_spell.consume_natoms()
 				current_spell.start_cooldown()
 				spell_cast.emit(current_spell)
-				print("DEBUG: Spell cast successfully")
-		else:
-			print("DEBUG: Cannot cast spell - cooldown or insufficient natoms")
 
 func add_spell(spell: BaseSpell) -> void:
 	print("DEBUG: Adding spell: ", spell.spell_name)

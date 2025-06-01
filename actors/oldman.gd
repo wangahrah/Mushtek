@@ -6,6 +6,9 @@ const FireballSpell = preload("res://objects/spells/fireball_spell.gd")
 const LightningSpell = preload("res://objects/spells/lightning_spell.gd")
 const FungalPushSpell = preload("res://objects/spells/fungal_push_spell.gd")
 
+# Import UI scenes
+const EquipmentUIScene = preload("res://objects/equipment_ui.tscn")
+
 # Signals
 signal player_died
 
@@ -22,6 +25,16 @@ const COLLECTION_RANGE: float = 50.0
 
 # Spell system
 @onready var spell_manager: SpellManager = $SpellManager
+
+# Equipment system
+@onready var equipment_ui: Control = null
+var base_stats: Dictionary = {
+	"health": 100,
+	"speed": move_speed,
+	"defense": 0,
+	"attack": 10
+}
+var current_stats: Dictionary = {}
 
 # Pickup properties
 var carried_object: RigidBody2D = null
@@ -47,6 +60,48 @@ func _ready() -> void:
 	_initialize_game_state()
 	_validate_collection_area()
 	_initialize_spells()
+	_initialize_equipment()
+	_initialize_ui()
+
+func _initialize_ui() -> void:
+	print("DEBUG: Initializing EquipmentUI")
+	# Create and add equipment UI
+	equipment_ui = EquipmentUIScene.instantiate()
+	if equipment_ui:
+		print("DEBUG: EquipmentUI instantiated successfully")
+		add_child(equipment_ui)
+		equipment_ui.hide()  # Start hidden
+		print("DEBUG: EquipmentUI added to scene and hidden")
+	else:
+		print("ERROR: Failed to instantiate EquipmentUI")
+
+func _initialize_equipment() -> void:
+	# Set up equipment system
+	EquipmentManager.set_player(self)
+	
+	# Initialize current stats with base stats
+	current_stats = base_stats.duplicate()
+	
+	# Connect equipment change signal
+	EquipmentManager.equipment_changed.connect(_on_equipment_changed)
+
+func _on_equipment_changed(slot_type: int, item: EquipmentItem) -> void:
+	# Recalculate stats when equipment changes
+	_recalculate_stats()
+
+func _recalculate_stats() -> void:
+	# Reset to base stats
+	current_stats = base_stats.duplicate()
+	
+	# Apply equipment stat changes
+	for slot_type in EquipmentManager.equipped_items:
+		var item = EquipmentManager.equipped_items[slot_type]
+		if item:
+			for stat in item.stat_changes:
+				current_stats[stat] = current_stats.get(stat, 0) + item.stat_changes[stat]
+	
+	# Update movement speed
+	move_speed = current_stats.speed
 
 func _physics_process(delta: float) -> void:
 	var input_vector: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -90,13 +145,15 @@ func _initialize_spells() -> void:
 # Input handling methods
 func _handle_input() -> void:
 	if Input.is_action_just_pressed("interact"):
-		print("DEBUG: Interact key pressed")
 		if carried_object == null:
 			_try_pickup()
 		else:
 			_drop_object()
 	elif Input.is_action_just_pressed("interact2") and carried_object != null:
 		_throw_object()
+	
+	if Input.is_action_just_pressed("equipment_press"):
+		_toggle_equipment_ui()
 	
 	if carried_object != null:
 		_update_carried_object_position()
@@ -250,3 +307,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("interactable") and body.has_method("set_interactable"):
 		body.set_interactable(false)
+
+func _toggle_equipment_ui() -> void:
+	print("DEBUG: Toggle EquipmentUI called")
+	if equipment_ui:
+		print("DEBUG: EquipmentUI exists, calling toggle_visibility")
+		equipment_ui.toggle_visibility()
+	else:
+		print("ERROR: EquipmentUI is null")

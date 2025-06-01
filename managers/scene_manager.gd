@@ -51,7 +51,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_inventory_changed(item_name: String, quantity: int) -> void:
-	print("Inventory updated: %s - Quantity: %d" % [item_name, quantity])
+	# print("Inventory updated: %s - Quantity: %d" % [item_name, quantity])
+	pass
 
 func _on_natom_collected(tier: NatomResource.Tier, amount: int) -> void:
 	print("Collected %d %s natoms" % [amount, natom_manager.get_natom_resource(tier).get_tier_name()])
@@ -63,7 +64,8 @@ func _on_energy_depleted(tier: NatomResource.Tier) -> void:
 	print("Energy depleted for %s" % natom_manager.get_natom_resource(tier).get_tier_name())
 
 func _on_health_changed(new_health: int) -> void:
-	print("Health changed to: %d" % new_health)
+	# print("Health changed to: %d" % new_health)
+	pass
 
 func _on_player_died() -> void:
 	print("Player died!")

@@ -1188,6 +1188,10 @@ natom_tier = 3
 position = Vector2(91, -55)
 scale = Vector2(1, 1.01593)
 motion_mode = 1
+move_speed = 150.0
+acceleration = 500.0
+friction = 400.0
+air_resistance = 0.95
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, 3)

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EquipmentItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://objects/equipment_item.gd" id="1_2k4m3"]
+
+[resource]
+script = ExtResource("1_2k4m3")
+item_name = "Steel Helm"
+description = "A solid steel helmet. Excellent protection for the head."
+slot_type = 0
+tier = 4
+is_unlocked = false
+stat_changes = {}
+requirements = {} 

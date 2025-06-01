@@ -1,0 +1,149 @@
+[gd_scene load_steps=4 format=3 uid="uid://bru6yipiquukt"]
+
+[ext_resource type="Script" uid="uid://c8ihdrqeddihu" path="res://objects/equipment_ui.gd" id="1_2k4m3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+bg_color = Color(0.2, 0.2, 0.2, 0.8)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+bg_color = Color(0.15, 0.15, 0.15, 0.9)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="EquipmentUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_2k4m3")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="MainContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TierContainer" type="HBoxContainer" parent="MainContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Tier1Button" type="Button" parent="MainContainer/VBoxContainer/TierContainer"]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+text = "T1"
+
+[node name="Tier2Button" type="Button" parent="MainContainer/VBoxContainer/TierContainer"]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+disabled = true
+text = "T2"
+
+[node name="Tier3Button" type="Button" parent="MainContainer/VBoxContainer/TierContainer"]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+disabled = true
+text = "T3"
+
+[node name="Tier4Button" type="Button" parent="MainContainer/VBoxContainer/TierContainer"]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+disabled = true
+text = "T4"
+
+[node name="Tier5Button" type="Button" parent="MainContainer/VBoxContainer/TierContainer"]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+disabled = true
+text = "T5"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MainContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftPanel" type="PanelContainer" parent="MainContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="GridContainer" type="GridContainer" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="HeadSlot" type="Button" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Head"
+
+[node name="HandsSlot" type="Button" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Hands"
+
+[node name="BodySlot" type="Button" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Body"
+
+[node name="FeetSlot" type="Button" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Feet"
+
+[node name="ItemList" type="ItemList" parent="MainContainer/VBoxContainer/HSplitContainer/LeftPanel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2")
+allow_reselect = true
+max_text_lines = 2
+fixed_column_width = 200
+icon_mode = 0
+
+[node name="RightPanel" type="PanelContainer" parent="MainContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="MainContainer/VBoxContainer/HSplitContainer/RightPanel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="ItemDetails" type="RichTextLabel" parent="MainContainer/VBoxContainer/HSplitContainer/RightPanel"]
+layout_mode = 2
+bbcode_enabled = true
