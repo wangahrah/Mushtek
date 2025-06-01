@@ -69,7 +69,11 @@ func _initialize_ui() -> void:
 	equipment_ui = EquipmentUIScene.instantiate()
 	if equipment_ui:
 		print("DEBUG: EquipmentUI instantiated successfully")
-		add_child(equipment_ui)
+		# Create a CanvasLayer for the UI
+		var canvas_layer = CanvasLayer.new()
+		canvas_layer.layer = 10  # Ensure it's above other layers
+		add_child(canvas_layer)
+		canvas_layer.add_child(equipment_ui)
 		equipment_ui.hide()  # Start hidden
 		print("DEBUG: EquipmentUI added to scene and hidden")
 	else:

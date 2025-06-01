@@ -5,13 +5,14 @@
 
 [resource]
 script = ExtResource("1_2k4m3")
-item_name = "Basic Cap"
-description = "A simple cloth cap. Provides basic protection from the elements."
+item_name = "Leather Cap"
+description = "A sturdy leather cap. Offers better protection than a basic cloth cap."
 slot_type = 0
 tier = 1
 is_unlocked = true
 icon = ExtResource("2_8dubc")
 stat_changes = {
-"defense": 2
+"defense": 3,
+"speed": -1
 }
 requirements = {} 

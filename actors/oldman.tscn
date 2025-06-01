@@ -233,6 +233,16 @@ script = ExtResource("1_w7ey8")
 
 [node name="SpellManager" parent="." instance=ExtResource("3_spell_manager")]
 
+[node name="EquipmentSlots" type="Node2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="head" type="Node2D" parent="EquipmentSlots"]
+position = Vector2(0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="EquipmentSlots/head"]
+visible = false
+position = Vector2(0, -4)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_4igtx")

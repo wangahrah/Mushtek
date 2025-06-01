@@ -11,6 +11,7 @@ class_name EquipmentItem
 # Visual properties
 @export var icon: Texture2D
 @export var model_scene: PackedScene  # For 3D models if needed
+@export var color_tint: Color = Color(1, 1, 1)  # Default white tint
 
 # Gameplay properties
 @export var weapon_scene: PackedScene  # For weapons/equipment that need to be attached

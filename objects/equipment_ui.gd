@@ -79,13 +79,15 @@ func _show_available_items(slot_type: int) -> void:
 	var available_items = EquipmentManager.get_available_items(slot_type, current_tier)
 	print("DEBUG: Found ", available_items.size(), " available items")
 	
+	# Debug print all available items
+	print("DEBUG: Available items list:")
 	for item in available_items:
-		var item_text = "[color=%s]%s[/color]" % [
-			item.get_tier_color().to_html(),
-			item.item_name
-		]
-		print("DEBUG: Adding item to list: ", item_text)
-		item_list.add_item(item_text, item.icon)
+		print("DEBUG: - ", item.item_name, " (Tier ", item.tier, ", Slot Type: ", item.slot_type, ")")
+	
+	for item in available_items:
+		# Just show the item name without color tags
+		print("DEBUG: Adding item to list: ", item.item_name)
+		item_list.add_item(item.item_name, item.icon)
 		print("DEBUG: Item added to list, current item count: ", item_list.item_count)
 	
 	item_list.show()
@@ -119,12 +121,9 @@ func _update_slot_display() -> void:
 		var equipped_item = EquipmentManager.get_equipped_item(slot_type)
 		
 		if equipped_item:
-			var item_text = "[color=%s]%s[/color]" % [
-				equipped_item.get_tier_color().to_html(),
-				equipped_item.item_name
-			]
-			print("DEBUG: Slot ", slot_type, " has equipped item: ", item_text)
-			button.text = item_text
+			# Just show the item name without color tags
+			print("DEBUG: Slot ", slot_type, " has equipped item: ", equipped_item.item_name)
+			button.text = equipped_item.item_name
 		else:
 			var slot_name = _get_slot_name(slot_type)
 			print("DEBUG: Slot ", slot_type, " is empty, showing name: ", slot_name)
@@ -147,6 +146,12 @@ func _on_item_list_item_selected(index: int) -> void:
 		var selected_item = available_items[index]
 		print("DEBUG: Selected item: ", selected_item.item_name)
 		_show_item_details(selected_item)
+		
+		# Equip the selected item
+		if EquipmentManager.equip_item(selected_item):
+			print("DEBUG: Successfully equipped item: ", selected_item.item_name)
+		else:
+			print("DEBUG: Failed to equip item: ", selected_item.item_name)
 	else:
 		print("DEBUG: Invalid item index: ", index)
 
