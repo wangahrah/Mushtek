@@ -41,6 +41,10 @@ func _ready() -> void:
 	# Connect to health signals
 	health_manager.health_changed.connect(_on_health_changed)
 	health_manager.player_died.connect(_on_player_died)
+	
+	# Initialize starting natoms
+	for tier in NatomResource.Tier.values():
+		add_natoms(tier, 100)  # Start with 100 natoms of each tier
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

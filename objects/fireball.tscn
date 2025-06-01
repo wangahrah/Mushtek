@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://usnj35vyrhpp"]
 
 [ext_resource type="Texture2D" uid="uid://ghr6xwmb7i43" path="res://assets/FX/Particle/Fire.png" id="1_ebbgg"]
-[ext_resource type="Script" uid="uid://by5b73irfhp3b" path="res://objects/fireball/fireball.gd" id="1_grvey"]
+[ext_resource type="Script" uid="uid://by5b73irfhp3b" path="res://objects/fireball.gd" id="1_grvey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_grvey"]
 

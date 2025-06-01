@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://drh30iwaam6yy"]
+[gd_scene load_steps=22 format=4 uid="uid://drh30iwaam6yy"]
 
 [ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://actors/oldman.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://bclo7843knepj" path="res://assets/Backgrounds/Tilesets/TilesetFloor.png" id="1_bswci"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/creature/cyclat/cyclat.tscn" id="12_xuw2a"]
 [ext_resource type="PackedScene" uid="uid://bcog3ehgdwn1s" path="res://objects/food.tscn" id="13_svqt2"]
 [ext_resource type="PackedScene" uid="uid://dj6ju71di64h7" path="res://objects/natom_source.tscn" id="14_a3ree"]
+[ext_resource type="PackedScene" uid="uid://c36c5u40cqwpf" path="res://actors/enemy.tscn" id="15_ng42p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_bswci")
@@ -1190,6 +1191,11 @@ motion_mode = 1
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, 3)
 zoom = Vector2(3, 3)
+
+[node name="enemy" parent="." instance=ExtResource("15_ng42p")]
+position = Vector2(155, -74)
+collision_layer = 15
+collision_mask = 15
 
 [connection signal="pressed" from="floorbutton" to="lockeddoor" method="_on_floorbutton_pressed"]
 [connection signal="unpressed" from="floorbutton" to="lockeddoor" method="_on_floorbutton_unpressed"]

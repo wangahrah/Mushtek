@@ -7,7 +7,7 @@ class_name FireballSpell
 func _init() -> void:
 	spell_name = "Fireball"
 	natom_cost = 5
-	cooldown = 0.5
+	cooldown = 0.25
 	cast_range = 300.0
 
 func cast(caster: Node2D, target_position: Vector2) -> void:
