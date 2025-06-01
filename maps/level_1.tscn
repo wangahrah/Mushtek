@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://drh30iwaam6yy"]
+[gd_scene load_steps=23 format=4 uid="uid://drh30iwaam6yy"]
 
 [ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://actors/oldman.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://bclo7843knepj" path="res://assets/Backgrounds/Tilesets/TilesetFloor.png" id="1_bswci"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bcog3ehgdwn1s" path="res://objects/food.tscn" id="13_svqt2"]
 [ext_resource type="PackedScene" uid="uid://dj6ju71di64h7" path="res://objects/natom_source.tscn" id="14_a3ree"]
 [ext_resource type="PackedScene" uid="uid://c36c5u40cqwpf" path="res://actors/enemy.tscn" id="15_ng42p"]
+[ext_resource type="PackedScene" path="res://managers/enemy_spawn_manager.tscn" id="16_spawn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_bswci")
@@ -562,34 +563,34 @@ texture = ExtResource("1_bswci")
 17:9/0/terrains_peering_bit/right_side = 1
 17:9/0/terrains_peering_bit/bottom_right_corner = 1
 17:9/0/terrains_peering_bit/bottom_side = 1
-17:9/0/terrains_peering_bit/bottom_left_corner = 1
 17:9/0/terrains_peering_bit/left_side = 1
+17:9/0/terrains_peering_bit/top_left_corner = 1
 17:9/0/terrains_peering_bit/top_side = 1
 17:9/0/terrains_peering_bit/top_right_corner = 1
 18:9/0 = 0
 18:9/0/terrain_set = 0
 18:9/0/terrain = 1
 18:9/0/terrains_peering_bit/bottom_side = 1
-18:9/0/terrains_peering_bit/bottom_left_corner = 1
 18:9/0/terrains_peering_bit/left_side = 1
 18:9/0/terrains_peering_bit/top_side = 1
 19:9/0 = 0
 19:9/0/terrain_set = 0
 19:9/0/terrain = 1
 19:9/0/terrains_peering_bit/right_side = 1
-19:9/0/terrains_peering_bit/bottom_right_corner = 1
 19:9/0/terrains_peering_bit/bottom_side = 1
-19:9/0/terrains_peering_bit/bottom_left_corner = 1
 19:9/0/terrains_peering_bit/left_side = 1
+19:9/0/terrains_peering_bit/top_left_corner = 1
 19:9/0/terrains_peering_bit/top_side = 1
+19:9/0/terrains_peering_bit/top_right_corner = 1
 20:9/0 = 0
 20:9/0/terrain_set = 0
 20:9/0/terrain = 1
 20:9/0/terrains_peering_bit/right_side = 1
-20:9/0/terrains_peering_bit/bottom_right_corner = 1
 20:9/0/terrains_peering_bit/bottom_side = 1
+20:9/0/terrains_peering_bit/bottom_left_corner = 1
 20:9/0/terrains_peering_bit/left_side = 1
 20:9/0/terrains_peering_bit/top_side = 1
+20:9/0/terrains_peering_bit/top_right_corner = 1
 21:9/0 = 0
 21:9/0/terrain_set = 0
 21:9/0/terrain = 1
@@ -1193,9 +1194,14 @@ position = Vector2(-6, 3)
 zoom = Vector2(3, 3)
 
 [node name="enemy" parent="." instance=ExtResource("15_ng42p")]
-position = Vector2(155, -74)
+position = Vector2(275, -20)
 collision_layer = 15
 collision_mask = 15
+
+[node name="EnemySpawnManager" parent="." instance=ExtResource("16_spawn")]
+min_enemies = 2
+max_enemies = 4
+enemy_scene = ExtResource("15_ng42p")
 
 [connection signal="pressed" from="floorbutton" to="lockeddoor" method="_on_floorbutton_pressed"]
 [connection signal="unpressed" from="floorbutton" to="lockeddoor" method="_on_floorbutton_unpressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8j6y4q2n3vxw"]
+
+[ext_resource type="Script" path="res://managers/enemy_spawn_manager.gd" id="1_script"]
+
+[node name="EnemySpawnManager" type="Node"]
+script = ExtResource("1_script")
+
+[node name="SpawnCheckTimer" type="Timer" parent="."]
+wait_time = 1.0
+autostart = true 

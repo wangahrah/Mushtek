@@ -56,7 +56,7 @@ shape = SubResource("CircleShape2D_fungal")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_urqrf")
 autoplay = "default"
-frame_progress = 0.318008
+frame_progress = 0.547208
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 16

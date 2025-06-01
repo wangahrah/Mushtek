@@ -33,6 +33,9 @@ func _ready() -> void:
 		start_pos + Vector2(100, 100),
 		start_pos + Vector2(0, 100)
 	]
+	
+	# Add to enemy group for spell targeting
+	add_to_group("enemy")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -97,11 +100,11 @@ func take_damage(amount: int) -> void:
 		queue_free()
 
 func _on_hit_area_entered(area: Area2D) -> void:
-	if area.is_in_group("fireball"):
+	if area.is_in_group("fireball") or area.is_in_group("lightning") or area.is_in_group("fungal_push"):
 		take_damage(area.damage)
 
 func _on_player_detect_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body.is_in_group("player"):
 		target = body
 		is_patrolling = false
 
