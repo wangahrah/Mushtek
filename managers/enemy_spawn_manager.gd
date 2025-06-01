@@ -39,7 +39,9 @@ func _update_enemy_list() -> void:
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
 		if is_instance_valid(enemy) and not enemy.is_queued_for_deletion():
-			current_enemies.append(enemy)
+			# Only count enemies that were spawned by this manager
+			if enemy.get_meta("spawned_by") == self:
+				current_enemies.append(enemy)
 
 func _on_spawn_check_timer_timeout() -> void:
 	_update_enemy_list()
@@ -84,6 +86,8 @@ func _spawn_enemies(count: int) -> void:
 	# Spawn new enemies
 	for i in range(count):
 		var enemy = enemy_scene.instantiate()
+		# Mark this enemy as spawned by this manager
+		enemy.set_meta("spawned_by", self)
 		get_tree().current_scene.add_child(enemy)
 		
 		# Find a valid spawn location

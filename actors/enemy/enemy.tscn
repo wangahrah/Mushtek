@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c36c5u40cqwpf"]
 
-[ext_resource type="Script" uid="uid://cfrtpyxk5gpr5" path="res://actors/enemy.gd" id="1_40wdo"]
+[ext_resource type="Script" uid="uid://cfrtpyxk5gpr5" path="res://actors/enemy/enemy.gd" id="1_40wdo"]
 [ext_resource type="Texture2D" uid="uid://bbfdvk01xi7pk" path="res://assets/Actor/Monsters/DragonYellow/SpriteSheet.png" id="2_tjssy"]
 [ext_resource type="AudioStream" uid="uid://c8vxovd5ixrax" path="res://assets/Audio/Sounds/Creature/Duck.wav" id="3_gl05p"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://drh30iwaam6yy"]
+[gd_scene load_steps=24 format=4 uid="uid://drh30iwaam6yy"]
 
 [ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://actors/oldman.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://bclo7843knepj" path="res://assets/Backgrounds/Tilesets/TilesetFloor.png" id="1_bswci"]
@@ -11,11 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://dd3a0s0a4h6fv" path="res://objects/lockeddoor.tscn" id="9_8de6f"]
 [ext_resource type="PackedScene" uid="uid://cy0qlvsi5jf06" path="res://actors/creature/creature.tscn" id="10_e0egg"]
 [ext_resource type="PackedScene" uid="uid://4chh00evth8c" path="res://objects/treasure_chest.tscn" id="11_2m22u"]
-[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/creature/cyclat/cyclat.tscn" id="12_xuw2a"]
+[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/beast/cyclat/cyclat.tscn" id="12_xuw2a"]
 [ext_resource type="PackedScene" uid="uid://bcog3ehgdwn1s" path="res://objects/food.tscn" id="13_svqt2"]
 [ext_resource type="PackedScene" uid="uid://dj6ju71di64h7" path="res://objects/natom_source.tscn" id="14_a3ree"]
-[ext_resource type="PackedScene" uid="uid://c36c5u40cqwpf" path="res://actors/enemy.tscn" id="15_ng42p"]
+[ext_resource type="PackedScene" uid="uid://c36c5u40cqwpf" path="res://actors/enemy/enemy.tscn" id="15_ng42p"]
 [ext_resource type="PackedScene" uid="uid://kd3iptlrn0ss" path="res://managers/enemy_spawn_manager.tscn" id="16_spawn"]
+[ext_resource type="PackedScene" uid="uid://brk43wlcml4f1" path="res://actors/enemybig/enemybig.tscn" id="17_5imb8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_bswci")
@@ -1188,19 +1189,20 @@ natom_tier = 3
 position = Vector2(91, -55)
 scale = Vector2(1, 1.01593)
 motion_mode = 1
-move_speed = 150.0
-acceleration = 500.0
-friction = 400.0
-air_resistance = 0.95
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, 3)
 zoom = Vector2(3, 3)
 
 [node name="EnemySpawnManager" parent="." instance=ExtResource("16_spawn")]
-min_enemies = 6
+min_enemies = 3
 max_enemies = 8
 enemy_scene = ExtResource("15_ng42p")
+
+[node name="EnemySpawnManager2" parent="." instance=ExtResource("16_spawn")]
+min_enemies = 3
+max_enemies = 12
+enemy_scene = ExtResource("17_5imb8")
 
 [connection signal="pressed" from="floorbutton" to="lockeddoor" method="_on_floorbutton_pressed"]
 [connection signal="unpressed" from="floorbutton" to="lockeddoor" method="_on_floorbutton_unpressed"]

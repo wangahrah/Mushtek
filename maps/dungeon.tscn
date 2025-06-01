@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxjihhnn21b13" path="res://actors/oldman.tscn" id="3_pjnkd"]
 [ext_resource type="Script" uid="uid://d0afbe82j8d6g" path="res://managers/scene_entrance.gd" id="4_x2vmd"]
 [ext_resource type="AudioStream" uid="uid://ifh8xu4rlubs" path="res://assets/Audio/Musics/2 - The Cave.ogg" id="6_pjnkd"]
-[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/creature/cyclat/cyclat.tscn" id="7_x2vmd"]
+[ext_resource type="PackedScene" uid="uid://cnm2sdwq2f7dx" path="res://actors/beast/cyclat/cyclat.tscn" id="7_x2vmd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_dnfnu")
