@@ -33,12 +33,17 @@ const TIER_MULTIPLIERS = {
 }
 
 func _init() -> void:
-	# Initialize with default values
-	pass
+	print("DEBUG: EquipmentItem _init called for ", item_name if item_name else "unnamed item")
+	print("DEBUG: Resource path: ", resource_path if resource_path else "no path")
+	print("DEBUG: Initial stat_changes before init: ", stat_changes)
+	# Don't initialize stat_changes here, let it be set by the resource
+	print("DEBUG: Final stat_changes after init: ", stat_changes)
 
 func get_stat_change(stat_name: String) -> float:
 	var base_value = stat_changes.get(stat_name, 0.0)
-	return base_value * TIER_MULTIPLIERS.get(tier, 1.0)
+	var final_value = base_value * TIER_MULTIPLIERS.get(tier, 1.0)
+	print("DEBUG: EquipmentItem.get_stat_change for ", item_name, " - stat: ", stat_name, " base: ", base_value, " tier: ", tier, " multiplier: ", TIER_MULTIPLIERS.get(tier, 1.0), " final: ", final_value)
+	return final_value
 
 func get_requirement(req_name: String) -> float:
 	return requirements.get(req_name, 0.0)

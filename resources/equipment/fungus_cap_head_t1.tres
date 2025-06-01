@@ -1,20 +1,23 @@
-[gd_resource type="Resource" script_class="EquipmentItem" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="EquipmentItem" load_steps=3 format=3 uid="uid://cqexu653camog"]
 
-[ext_resource type="Script" path="res://objects/equipment_item.gd" id="1_2k4m3"]
-[ext_resource type="Texture2D" path="res://assets/Items/Potion/Heart.png" id="2_8dubc"]
+[ext_resource type="Script" uid="uid://bsc7dli1m6wpj" path="res://objects/equipment_item.gd" id="1_2k4m3"]
+[ext_resource type="Texture2D" uid="uid://b5tyld7qmp0ks" path="res://assets/Items/Potion/Heart.png" id="2_8dubc"]
 
 [resource]
 script = ExtResource("1_2k4m3")
 item_name = "Fungus Cap"
 description = "A cap made from living fungus. Provides basic protection while slowly regenerating your health."
-slot_type = 0  # HEAD slot
-tier = 1
+slot_type = 0
 is_unlocked = true
+tier = 1
 icon = ExtResource("2_8dubc")
-color_tint = Color(0.4, 0.8, 0.4, 1.0)  # Fungal green
+color_tint = Color(0.4, 0.8, 0.4, 1)
 stat_changes = {
-    "defense": 2,
-    "health": 5,
-    "speed": 1
+"defense": 5,
+"health": 50,
+"speed": 100
 }
-requirements = {} 
+requirements = {}
+rarity = 1
+durability = 100.0
+max_durability = 100.0

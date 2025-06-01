@@ -90,22 +90,39 @@ func _initialize_equipment() -> void:
 	EquipmentManager.equipment_changed.connect(_on_equipment_changed)
 
 func _on_equipment_changed(slot_type: int, item: EquipmentItem) -> void:
+	print("DEBUG: Equipment changed signal received in player")
+	print("DEBUG: Changed slot: ", slot_type)
+	print("DEBUG: Changed item: ", item.item_name if item else "none")
 	# Recalculate stats when equipment changes
 	_recalculate_stats()
 
 func _recalculate_stats() -> void:
+	print("DEBUG: Recalculating stats")
+	print("DEBUG: Base stats: ", base_stats)
 	# Reset to base stats
 	current_stats = base_stats.duplicate()
+	print("DEBUG: Current stats after reset: ", current_stats)
 	
 	# Apply equipment stat changes
 	for slot_type in EquipmentManager.equipped_items:
 		var item = EquipmentManager.equipped_items[slot_type]
 		if item:
+			print("DEBUG: Applying stats from item: ", item.item_name)
+			print("DEBUG: Item stat_changes dictionary: ", item.stat_changes)
+			print("DEBUG: Item stat_changes type: ", typeof(item.stat_changes))
+			print("DEBUG: Item stat_changes keys: ", item.stat_changes.keys())
 			for stat in item.stat_changes:
-				current_stats[stat] = current_stats.get(stat, 0) + item.stat_changes[stat]
+				if stat == "speed":
+					# Speed changes are now treated as absolute values
+					current_stats[stat] = base_stats[stat] + item.get_stat_change(stat)
+					print("DEBUG: New speed value: ", current_stats[stat])
+				else:
+					current_stats[stat] = current_stats.get(stat, 0) + item.get_stat_change(stat)
 	
+	print("DEBUG: Final current stats: ", current_stats)
 	# Update movement speed
 	move_speed = current_stats.speed
+	print("DEBUG: Updated move_speed to: ", move_speed)
 
 func _physics_process(delta: float) -> void:
 	var input_vector: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -165,10 +182,13 @@ func _handle_input() -> void:
 # Movement methods
 func _handle_movement(input_vector: Vector2, delta: float) -> void:
 	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * move_speed, acceleration * delta)
+		print("DEBUG: Current move_speed: ", move_speed)
+		# Set velocity directly based on input and move_speed
+		velocity = input_vector * move_speed
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	
+	# Apply air resistance
 	velocity *= air_resistance
 
 func _handle_pushable_collisions() -> void:
