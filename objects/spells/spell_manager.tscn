@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://ddi2xttc67fh7"]
 
-[ext_resource type="Script" path="res://objects/spells/spell_manager.gd" id="1_spell_manager"]
+[ext_resource type="Script" uid="uid://d4ew7gypaugdo" path="res://objects/spells/spell_manager.gd" id="1_spell_manager"]
 
 [node name="SpellManager" type="Node"]
-script = ExtResource("1_spell_manager") 
+script = ExtResource("1_spell_manager")

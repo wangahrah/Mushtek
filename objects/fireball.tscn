@@ -102,7 +102,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [node name="Fireball" type="Area2D"]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 15
 script = ExtResource("1_grvey")
 speed = 160.0
 

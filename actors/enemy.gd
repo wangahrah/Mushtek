@@ -1,16 +1,18 @@
 extends CharacterBody2D
 
-var target: Node2D
 var speed: float = 100.0  # Reduced speed for more realistic movement
-var min_distance: float = 25.0
-var buffer_distance: float = 10.0
+var base_speed: float = 100.0  # Store the base speed
+var is_slowed: bool = false
+var slowdown_timer: float = 0.0
+const SLOWDOWN_DURATION: float = 0.5
+const SLOWDOWN_MULTIPLIER: float = 0.5  # 50% slowdown
 
-# Patrol variables
-var patrol_points: Array[Vector2] = []
-var current_patrol_index: int = 0
-var patrol_wait_time: float = 2.0
-var patrol_timer: float = 0.0
-var is_patrolling: bool = true
+# Random movement variables
+var wander_timer: float = 0.0
+var wander_direction: Vector2 = Vector2.ZERO
+var wander_time: float = 2.0  # Time before changing direction
+var min_wander_time: float = 1.0
+var max_wander_time: float = 3.0
 
 # Combat variables
 @export var max_health: int = 30
@@ -25,14 +27,10 @@ var damage_timer: float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_health = max_health
-	# Initialize patrol points around the enemy's starting position
-	var start_pos = global_position
-	patrol_points = [
-		start_pos,
-		start_pos + Vector2(100, 0),
-		start_pos + Vector2(100, 100),
-		start_pos + Vector2(0, 100)
-	]
+	# Initialize random direction
+	randomize()
+	wander_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	wander_time = randf_range(min_wander_time, max_wander_time)
 	
 	# Add to enemy group for spell targeting
 	add_to_group("enemy")
@@ -48,37 +46,25 @@ func _process(delta: float) -> void:
 	
 	if damage_timer > 0:
 		damage_timer -= delta
-
-	if target:
-		# Player detected - chase behavior
-		var distance_to_player: Vector2 = target.global_position - global_position
-		var distance_length = distance_to_player.length()
 		
-		if distance_length > min_distance + buffer_distance:
-			var direction_normal: Vector2 = distance_to_player.normalized()
-			velocity = direction_normal * speed
-		else:
-			velocity = Vector2.ZERO
-			# Try to damage player if in range
-			if damage_timer <= 0 and target.has_method("take_damage"):
-				target.take_damage(damage)
-				damage_timer = damage_cooldown
-	else:
-		# Patrol behavior
-		if is_patrolling:
-			var target_point = patrol_points[current_patrol_index]
-			var distance_to_point = global_position.distance_to(target_point)
-			
-			if distance_to_point < 10:
-				patrol_timer += delta
-				if patrol_timer >= patrol_wait_time:
-					patrol_timer = 0
-					current_patrol_index = (current_patrol_index + 1) % patrol_points.size()
-			else:
-				var direction = (target_point - global_position).normalized()
-				velocity = direction * speed * 0.5  # Slower speed while patrolling
-		else:
-			velocity = Vector2.ZERO
+	# Handle slowdown
+	if is_slowed:
+		slowdown_timer += delta
+		if slowdown_timer >= SLOWDOWN_DURATION:
+			is_slowed = false
+			slowdown_timer = 0.0
+			speed = base_speed
+			print("Enemy: Slowdown ended, speed restored to: ", speed)
+
+	# Random wandering behavior
+	wander_timer += delta
+	if wander_timer >= wander_time:
+		wander_timer = 0
+		# Generate new random direction
+		wander_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+		wander_time = randf_range(min_wander_time, max_wander_time)
+	
+	velocity = wander_direction * speed * 0.5  # Slower speed while wandering
 	
 	# Update animation
 	if velocity == Vector2.ZERO:
@@ -89,6 +75,15 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = velocity.x < 0
 	
 	move_and_slide()
+	
+	# Handle collisions and bounce off walls
+	if get_slide_collision_count() > 0:
+		var collision = get_slide_collision(0)
+		var reflect = collision.get_remainder().bounce(collision.get_normal())
+		wander_direction = reflect.normalized()
+		# Add some randomness to the bounce
+		wander_direction = wander_direction.rotated(randf_range(-PI/4, PI/4))
+		wander_timer = 0  # Reset timer to allow for new direction change
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
@@ -103,13 +98,15 @@ func _on_hit_area_entered(area: Area2D) -> void:
 	if area.is_in_group("fireball") or area.is_in_group("lightning") or area.is_in_group("fungal_push"):
 		take_damage(area.damage)
 
-func _on_player_detect_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		target = body
-		is_patrolling = false
-
-func _on_player_detect_area_2d_body_exited(body: Node2D) -> void:
-	if body == target:
-		target = null
-		velocity = Vector2.ZERO
-		is_patrolling = true
+func apply_knockback(force: Vector2) -> void:
+	print("Enemy: Received knockback force: ", force)
+	velocity = force
+	print("Enemy: New velocity set to: ", velocity)
+	move_and_slide()
+	print("Enemy: After move_and_slide, velocity is: ", velocity)
+	
+	# Apply slowdown effect
+	is_slowed = true
+	slowdown_timer = 0.0
+	speed = base_speed * SLOWDOWN_MULTIPLIER
+	print("Enemy: Applied slowdown, new speed: ", speed)

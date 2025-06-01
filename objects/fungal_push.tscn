@@ -47,8 +47,9 @@ colors = PackedColorArray(0.2, 0.8, 0.2, 1, 0, 0.4, 0, 1)
 
 [node name="FungalPush" type="Area2D"]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 15
 script = ExtResource("1_fungal")
+knockback_force = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fungal")
@@ -56,7 +57,7 @@ shape = SubResource("CircleShape2D_fungal")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_urqrf")
 autoplay = "default"
-frame_progress = 0.547208
+frame_progress = 0.496415
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 16

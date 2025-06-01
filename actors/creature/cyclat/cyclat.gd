@@ -6,6 +6,7 @@ var target: Node2D
 var speed: float = 3000.0  # Speed in pixels per second
 var min_distance: float = 25.0  # Stop when within this distance
 var buffer_distance: float = 10.0  # Additional buffer to prevent sticking
+var too_close_distance: float = 15.0  # Distance at which cyclat will move away
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +18,13 @@ func _process(delta: float) -> void:
 		var distance_to_player: Vector2 = target.global_position - global_position
 		var distance_length = distance_to_player.length()
 		
-		if distance_length > min_distance + buffer_distance:
+		if distance_length < too_close_distance:
+			# Move away from player when too close
+			var direction_normal: Vector2 = -distance_to_player.normalized()  # Negative to move away
+			velocity = direction_normal * speed * delta
+			print("Cyclat: Too close! Moving away")
+		elif distance_length > min_distance + buffer_distance:
+			# Follow player when at a good distance
 			var direction_normal: Vector2 = distance_to_player.normalized()
 			# Slow down as we get closer to the target
 			var speed_multiplier = min(1.0, (distance_length - min_distance) / 100.0)
@@ -31,6 +38,8 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 	else:
 		$AnimatedSprite2D.play("run")
+		# Flip sprite based on movement direction
+		$AnimatedSprite2D.flip_h = velocity.x < 0
 		
 	if can_interact == false:
 		$CanvasLayer.visible = false

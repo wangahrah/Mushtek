@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bcog3ehgdwn1s" path="res://objects/food.tscn" id="13_svqt2"]
 [ext_resource type="PackedScene" uid="uid://dj6ju71di64h7" path="res://objects/natom_source.tscn" id="14_a3ree"]
 [ext_resource type="PackedScene" uid="uid://c36c5u40cqwpf" path="res://actors/enemy.tscn" id="15_ng42p"]
-[ext_resource type="PackedScene" path="res://managers/enemy_spawn_manager.tscn" id="16_spawn"]
+[ext_resource type="PackedScene" uid="uid://kd3iptlrn0ss" path="res://managers/enemy_spawn_manager.tscn" id="16_spawn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rus8k"]
 texture = ExtResource("1_bswci")
@@ -1193,14 +1193,9 @@ motion_mode = 1
 position = Vector2(-6, 3)
 zoom = Vector2(3, 3)
 
-[node name="enemy" parent="." instance=ExtResource("15_ng42p")]
-position = Vector2(275, -20)
-collision_layer = 15
-collision_mask = 15
-
 [node name="EnemySpawnManager" parent="." instance=ExtResource("16_spawn")]
-min_enemies = 2
-max_enemies = 4
+min_enemies = 6
+max_enemies = 8
 enemy_scene = ExtResource("15_ng42p")
 
 [connection signal="pressed" from="floorbutton" to="lockeddoor" method="_on_floorbutton_pressed"]

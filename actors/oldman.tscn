@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be3nmedlxnrcj" path="res://actors/oldman.gd" id="1_w7ey8"]
 [ext_resource type="Texture2D" uid="uid://cqsoxe04bxcf6" path="res://assets/Actor/Characters/SorcererOrange/SpriteSheet.png" id="2_wr5kl"]
-[ext_resource type="PackedScene" path="res://objects/spells/spell_manager.tscn" id="3_spell_manager"]
+[ext_resource type="PackedScene" uid="uid://ddi2xttc67fh7" path="res://objects/spells/spell_manager.tscn" id="3_spell_manager"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nabfw"]
 atlas = ExtResource("2_wr5kl")
